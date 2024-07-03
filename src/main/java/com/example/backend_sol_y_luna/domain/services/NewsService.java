@@ -1,9 +1,10 @@
 package com.example.backend_sol_y_luna.domain.services;
 
 import com.example.backend_sol_y_luna.domain.entities.News;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public interface NewsService {
 
     News createNews(News event);
