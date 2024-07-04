@@ -7,10 +7,14 @@ import com.example.backend_sol_y_luna.domain.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
+
+    @Autowired
+    private UsuarioRepository data;
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -45,5 +49,8 @@ public class UsuarioServiceImpl implements UsuarioService {
         usuarioRepository.deleteById(usuarioId);
     }
 
-
+    @Override
+    public List<Usuario> listar(){
+        return (List<Usuario>) data.findAll();
+    }
 }

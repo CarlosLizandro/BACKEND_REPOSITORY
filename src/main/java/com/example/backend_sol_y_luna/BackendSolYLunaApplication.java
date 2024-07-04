@@ -19,8 +19,6 @@ public class BackendSolYLunaApplication implements CommandLineRunner {
     @Autowired
     private UsuarioService usuarioService;
 
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public static void main(String[] args) {
         SpringApplication.run(BackendSolYLunaApplication.class, args);
@@ -33,7 +31,7 @@ public class BackendSolYLunaApplication implements CommandLineRunner {
         usuario.setNombre("Lizandro");
         usuario.setApellido("Reyes");
         usuario.setUsername("creyes");
-        usuario.setPassword(bCryptPasswordEncoder.encode ("1234"));
+        usuario.setPassword("1234");
         usuario.setEmail("c@gmail.com");
         usuario.setTelefono("123456789");
         usuario.setPerfil("foto.png");

@@ -1,11 +1,11 @@
 package com.example.backend_sol_y_luna.domain.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-
 @Entity
 @Table(name = "roles")
+
 public class Rol {
 
     @Id

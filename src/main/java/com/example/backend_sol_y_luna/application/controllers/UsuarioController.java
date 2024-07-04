@@ -5,9 +5,11 @@ import com.example.backend_sol_y_luna.domain.entities.UsuarioRol;
 import com.example.backend_sol_y_luna.domain.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -47,7 +49,12 @@ public class UsuarioController {
     public Usuario obtenerUsuario(@PathVariable("username") String username){
         return usuarioService.obtenerUsuario(username);
     }
-
+    @GetMapping("/listar")
+    public String listar(Model model){
+        List<Usuario>usuarios=usuarioService.listar();
+        model.addAttribute("usuario",usuarios);
+        return "index";
+    }
     @DeleteMapping("/{usuarioId}")
     public void eliminarUsuario(@PathVariable("usuarioId") Long usuarioId){
         usuarioService.eliminarUsuario(usuarioId);

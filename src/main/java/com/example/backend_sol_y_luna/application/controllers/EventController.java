@@ -1,7 +1,7 @@
 package com.example.backend_sol_y_luna.application.controllers;
 import java.util.List;
 
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import com.example.backend_sol_y_luna.domain.entities.Event;
 import com.example.backend_sol_y_luna.domain.services.EventService;
